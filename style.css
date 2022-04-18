@@ -1,15 +1,18 @@
 body{
+    
     background-color: #E5E5E5;
 
     position: absolute;
 
     max-width: 412px;
-    max-height: 915px;
+    max-height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 26px;
+
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -25,7 +28,6 @@ body{
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     gap: 150px;
 
 }
@@ -37,35 +39,151 @@ body{
     width: 75px;
     height: 53px;
     top: 16px;
+    left: 30px;
         
 }
 
+#sidebar{
+    position: fixed;
+    width: 207px;
+    height: 100%;
+    left: -300px;
 
-#menu-sidebar{
+    background: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+
+    z-index: 999;
+}
+
+#sidebar.active{
+    display: flex;
+
+    left: 205px;
+}
+
+#sidebar ul{
+    position: absolute;
+    width: 207px;
+    height: 915px;
+    top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#sidebar ul ol{
+    position: relative;
+
+    width: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#sidebar .toggle-btn{
+    position: absolute;
+    display: block;
+    top: 15px;
+    left: 250px;
+}
+
+#sidebar .toggle-btn span{
+    position: relative;
+    display: block;
+
+    height: 50px;
+    width: 50px;
+    left: 350px;
+
+    background-image: url(./img/people.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#sidebar .toggle-btn2 span{
+    position: relative;
+    display: block;
+
+    height: 50px;
+    width: 50px;
+    left: 95px;
+    top: -5px;
+
+    background-image: url(./img/people.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+
+    cursor: pointer;
+
+}
+
+
+.contato{
+    
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
+}
+
+.contato img{
+    
+    position: relative;
+
+    width: 30px;
+    height: 30px;
+}
+
+.visibilidade {
 
     position: relative;
 
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.visibilidade img{
+
+    position: relative;
+
+    width: 30px;
     height: 30px;
-    width: 42px;
-    top: 25px;
 
-    background-image: url(./img/vector.png);
-    background-repeat: no-repeat;
-    background-color: #FFFFFF;
-    border: none;
-    
 }
 
-section{ 
-    background-color: blue;
+#check{
 
-    position: fixed;
+    position: relative;
 
-    height: 753px;
-    width: 412px;
+    color: green;
+    font-size: 20px;
 
-    top: 106px;
+    top: 15px;
+
 }
+
 
 footer{
 
@@ -74,7 +192,7 @@ footer{
     width: 412px;
     height: 80px;
     bottom: 0;
-    z-index: 999999;
+    z-index: 1;
     
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
@@ -97,11 +215,12 @@ footer{
     font-size: 20px;
 
     background-color: #FFFFFF;
-    border: none;
+    letter-spacing: 0.1px;
+    all: unset;
     
 }
 
-.send{
+#send{
 
     position: relative;
 
@@ -112,5 +231,177 @@ footer{
     background-repeat: no-repeat;
     background-color: #FFFFFF;
     border: none; 
+
+    cursor: pointer;
+
+}
+
+
+.caixa-mensagens{ 
+    position: fixed;
+
+    height: 100%;
+    width: 412px;
+    max-width: 412px;
+
+    top: 106px;
+    margin-bottom: 3px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow-y: scroll;
+    scrollbar-width: none;
+    word-break: break-word;
+
+}
+
+.mensagem-publica{
+    max-width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,rgba(0, 0, 0, 0.05));
+
+    display: flex;
+    flex-direction:row;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+
+.mensagem-privada{
+    max-width: 100%;
+    background-color: #FFDEDE;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,rgba(0, 0, 0, 0.05));
+
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.login{
+    max-width: 100%;
+    background-color: #DCDCDC;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,rgba(0, 0, 0, 0.05));
+
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.logout{
+    max-width: 100%;
+    background-color: #DCDCDC;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,rgba(0, 0, 0, 0.05));
+
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+/* Horário */
+
+h1{
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    
+    color: #AAAAAA;
+
+    margin: 10px;
+
+    word-break:keep-all;
+
+}
+
+
+/* username*/
+
+h2{
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    
+    color: black;
+
+    margin-top: 10px;
+    margin-right: 3px;
+
+    word-break: keep-all;
+
+}
+
+/* Mensagens */
+
+h6{
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    
+    color: black;
+
+    margin: 10px 5px 10px 5px;
+
+    word-break: break-word;
+
+}
+
+/* Menu Sidebar */
+
+h3{
+    position: relative;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    
+    color: #000000;
+
+}
+
+/* Conteúdo Sidebar */
+
+h4{
+    position: relative;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    align-items: center;
+    
+    color: #000000;
+
+    top: 18px;
+    padding: 15px;
+    margin-left: 15px;
+
+    cursor: pointer;
 
 }
