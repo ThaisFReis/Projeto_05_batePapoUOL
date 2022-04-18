@@ -12,33 +12,90 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
 
-    <style> </style> 
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style> 
 
   </head>
 
   <body>
 
+    <!-- Topo da página -->
+
     <div class="topo">
 
       <img src="./img/logo.png">
-      <button id="menu-sidebar" onclick="menu"> </button>
+
+      <div id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar()">
+          <span></span>
+        </div>
+
+        <ul>
+
+          <div class="toggle-btn2" onclick="toggleSidebar()"><span></span></div>
+
+          <h3>Escolha um contato para enviar mensagem:</h3>
+          <ol>
+            <div class="contato">
+              <img src="./img/people.png" alt="Público">
+              <h4>Todos</h4>
+              <ion-icon id="check" name="checkmark"></ion-icon>
+            </ol>
+
+          <ol>
+            <div class="contato">       
+              <img src="./img/contact.png" alt="João">
+              <h4>João</h4>
+              <ion-icon id="check" name="checkmark"></ion-icon>
+            </div>
+          </ol>
+
+          <ol>
+            <div class="contato">
+              <img src="./img/contact.png" alt="Maria">
+              <h4>Maria</h4>
+              <ion-icon id="check" name="checkmark"></ion-icon>
+            </div>
+          </ol>
+
+          <h3>Escolha a visibilidade:</h3>
+          <ol>
+            <div class="visibilidade">
+              <img src="./img/lock.png" alt="Público">
+              <h4>Público</h4>
+              <ion-icon id="check" name="checkmark"></ion-icon>
+            </div>
+          </ol>
+
+          <ol>
+            <div class="visibilidade">
+              <img src="./img/unlock.png" alt="Privado">
+              <h4>Reservadamente</h4>
+              <ion-icon id="check" name="checkmark"></ion-icon>
+            </div>
+          </ol>
+
+        </ul>
+      </div>
 
     </div>
 
-    <section>
-      <ul>
-        <li> </li>
-      </ul>
-    </section>
+    <!-- Caixa de mensagens -->
 
-    <footer>
+    <div class="caixa-mensagens"></div>
+    
+    <!-- Caixa de escrever mensagem -->
 
-     <input id="digite" placeholder="Digite aqui...">
-     <button class="send" onclick="send"> </button>
-     
+    <footer class="bottom">
+
+     <input type="text" id="digite" placeholder="Digite aqui..."/>
+     <button id="send" onclick="send()"> </button>
     </footer>
 
-    <script src="scripts.js"> </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="javascripts.js"> </script>
     
   </body>
 
